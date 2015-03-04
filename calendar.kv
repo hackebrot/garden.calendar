@@ -1,6 +1,29 @@
 #:kivy 1.8.0
 
-GridLayout:
+BoxLayout:
+    orientation: 'vertical'
+    Label:
+        size_hint_y: 0.25
+        text: 'January'
+    BoxLayout:
+        size_hint_y: 0.125
+        Label:
+            text: 'Mon'
+        Label:
+            text: 'Tue'
+        Label:
+            text: 'Wed'
+        Label:
+            text: 'Thu'
+        Label:
+            text: 'Fri'
+        Label:
+            text: 'Sat'
+        Label:
+            text: 'Sun'
+    Days
+
+<Days@GridLayout>:
     cols: 7
     ToggleButton:
         text: "1"
