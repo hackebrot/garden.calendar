@@ -1,89 +1,33 @@
 #:kivy 1.8.0
+#:import win kivy.core.window
 
-BoxLayout:
-    orientation: 'vertical'
+ScrollView:
+    do_scroll_x: False
+    size: win.Window.size
+    size_hint: None, None
+    GridLayout:
+        cols: 1
+        height: self.minimum_height
+        id: cal
+        size_hint: None, None
+        width: root.width
+
+
+<Day@ToggleButton>:
+    height: self.parent.height
+    width: self.height
+
+
+<Week>:
+    height: win.Window.width / len(self.children)
+    orientation: 'horizontal'
+    size_hint: 1, None
     Label:
-        size_hint_y: 0.25
-        text: 'January'
-    BoxLayout:
-        size_hint_y: 0.125
-        Label:
-            text: 'Mon'
-        Label:
-            text: 'Tue'
-        Label:
-            text: 'Wed'
-        Label:
-            text: 'Thu'
-        Label:
-            text: 'Fri'
-        Label:
-            text: 'Sat'
-        Label:
-            text: 'Sun'
-    Days
-
-<Days@GridLayout>:
-    cols: 7
-    ToggleButton:
-        text: "1"
-    ToggleButton:
-        text: "2"
-    ToggleButton:
-        text: "3"
-    ToggleButton:
-        text: "4"
-    ToggleButton:
-        text: "5"
-    ToggleButton:
-        text: "6"
-    ToggleButton:
-        text: "7"
-    ToggleButton:
-        text: "8"
-    ToggleButton:
-        text: "9"
-    ToggleButton:
-        text: "10"
-    ToggleButton:
-        text: "11"
-    ToggleButton:
-        text: "12"
-    ToggleButton:
-        text: "13"
-    ToggleButton:
-        text: "14"
-    ToggleButton:
-        text: "15"
-    ToggleButton:
-        text: "16"
-    ToggleButton:
-        text: "17"
-    ToggleButton:
-        text: "18"
-    ToggleButton:
-        text: "19"
-    ToggleButton:
-        text: "20"
-    ToggleButton:
-        text: "21"
-    ToggleButton:
-        text: "22"
-    ToggleButton:
-        text: "23"
-    ToggleButton:
-        text: "24"
-    ToggleButton:
-        text: "25"
-    ToggleButton:
-        text: "26"
-    ToggleButton:
-        text: "27"
-    ToggleButton:
-        text: "28"
-    ToggleButton:
-        text: "29"
-    ToggleButton:
-        text: "30"
-    ToggleButton:
-        text: "31"
+        text: str(root.week_num)
+    Day
+    Day
+    Day
+    Day
+    Day
+    Day
+    Day
