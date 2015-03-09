@@ -1,16 +1,37 @@
 #:kivy 1.8.0
 #:import win kivy.core.window
 
-ScrollView:
-    do_scroll_x: False
-    size: win.Window.size
-    size_hint: None, None
-    GridLayout:
-        cols: 1
-        height: self.minimum_height
-        id: cal
-        size_hint: None, None
-        width: root.width
+<Header@BoxLayout>:
+    orientation: 'horizontal'
+    Label
+    Label:
+        text: 'Mon'
+    Label:
+        text: 'Tue'
+    Label:
+        text: 'Wed'
+    Label:
+        text: 'Thu'
+    Label:
+        text: 'Fri'
+    Label:
+        text: 'Sat'
+    Label:
+        text: 'Sun'
+
+BoxLayout:
+    orientation: 'vertical'
+    Header
+        size_hint_y: None
+        height: 40
+    ScrollView:
+        do_scroll_x: False
+        GridLayout:
+            cols: 1
+            height: self.minimum_height
+            id: cal
+            size_hint: None, None
+            width: root.width
 
 
 <Day@ToggleButton>:
@@ -19,7 +40,7 @@ ScrollView:
 
 
 <Week>:
-    height: win.Window.width / len(self.children)
+    height: 40
     orientation: 'horizontal'
     size_hint: 1, None
     Label:

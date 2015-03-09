@@ -18,7 +18,6 @@ class CalendarApp(App):
     """Basic App to hold the calendar widget."""
 
     def build(self):
-        scroll_view = self.root
         for i in range(1, 54):
-            scroll_view.ids.cal.add_widget(Week(week_num=i))
-        return scroll_view
+            self.root.ids.cal.add_widget(Week(week_num=i))
+        return self.root
